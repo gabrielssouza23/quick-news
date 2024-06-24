@@ -1,0 +1,12 @@
+.categoryList{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 5%;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    padding: 6px;
+}
