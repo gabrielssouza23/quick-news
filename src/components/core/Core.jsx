@@ -2,12 +2,13 @@
 import React from 'react';
 import Layout from './Layout';
 import MainContainer from './MainContainer';
+import Section from '../section/Section';
 
 const Core = () => {
   return (
     <Layout>
       <MainContainer>
-        {/* Aqui você pode adicionar outros componentes ou conteúdo */}
+        <Section />
       </MainContainer>
     </Layout>
   );

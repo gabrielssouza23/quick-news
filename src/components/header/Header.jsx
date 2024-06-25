@@ -5,12 +5,12 @@ import Categories from '../categories/Categories'
 const Header = () => {
   return (
     <header>
-      <div className="title">
-        <h1>Quick Times</h1>
-      </div>
-      <div className="categories">
+      <nav>
+        <div className="title">
+          <h1>Quick Times</h1>
+        </div>
         <Categories />
-      </div>
+      </nav>
     </header>
   )
 }

@@ -1,10 +1,13 @@
 // src/components/MainContainer.jsx
 import React from 'react';
 
-const MainContainer = ({/* children */ }) => {
+
+
+// eslint-disable-next-line react/prop-types
+const MainContainer = ({ children }) => {
   return (
     <div className="main-container">
-      {/* {children} */}
+      {children}
     </div>
   );
 };

@@ -2,12 +2,13 @@ import Header from "../header/Header";
 import Footer from "../Footer/Footer";
 import "./layout.css"
 
-const Layout = ({/* children */ }) => {
+// eslint-disable-next-line react/prop-types
+const Layout = ({ children }) => {
   return (
     <div className="page">
       <Header />
       <main>
-        {/* {children} */}
+        {children}
       </main>
       <Footer />
     </div>

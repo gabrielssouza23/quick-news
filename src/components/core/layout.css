@@ -1,5 +1,6 @@
 .page{
-  width: 80%;
-  max-width: calc(100% - 200px);
-  margin: 0 auto;
+  width: 100%;
+  max-width: calc(100% - 15%);
+  padding: 8px;
+  /* margin: 0 auto; */
 }
