@@ -1,0 +1,6 @@
+body{
+  background-image: url('/background.svg'); /* substitua pelo caminho correto */
+  background-size: cover; /* ajusta a imagem para cobrir todo o fundo */
+  background-position: center; /* centraliza a imagem */
+  background-repeat: no-repeat; /* impede a repetição da imagem */
+}
