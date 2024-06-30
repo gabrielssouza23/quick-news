@@ -2,7 +2,7 @@ body{
   position: absolute;
   display: flex;
   width: 100%;
-  background-color: #eee7d7;
+  background-color: #ffc746;
   overflow-x: hidden;
   background-image: url(http://www.transparenttextures.com/patterns/textured-paper.png);
 }

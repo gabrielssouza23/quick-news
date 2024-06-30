@@ -1,26 +1,53 @@
-import React from 'react'
-import GET_ARTICLE from '../../Api/news/getArticleNYT'
+import React, { useState, useEffect } from 'react';
+// import GET_ARTICLE from '../../Api/news/getArticleNYT'
+import GET_TOPSTORIES from '../../Api/news/getTopStories';
+import { HorizontalCard } from '../card/HorizontalCard';
 
 const Section = () => {
-
-  const { url, options } = GET_ARTICLE();
+  const { url, options } = GET_TOPSTORIES();
 
   const fetchData = async () => {
     const response = await fetch(url, options);
     const data = await response.json();
     return data;
-  }
+  };
 
-  const handleClick = fetchData();
+  const NewsSection = () => {
+    const [articles, setArticles] = useState([]);
 
+    useEffect(() => {
+      const getArticles = async () => {
+        const data = await fetchData();
+        setArticles(data.results);
+      };
+      getArticles();
+    }, []);
 
-  return (
-    <div>
-      {
-        JSON.stringify(handleClick)
-      }
-    </div>
-  )
-}
+    return (
+      <div className="container mx-auto p-4">
+        <div className="grid grid-cols-1 gap-4">
+          {/* Single Card Row */}
+          {articles.slice(0, 1).map((article, index) => (
+            <HorizontalCard key={index} article={article} />
+          ))}
 
-export default Section
+          {/* Double Card Row */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {articles.slice(1, 3).map((article, index) => (
+              <HorizontalCard key={index} article={article} />
+            ))}
+          </div>
+
+          {/* Repeat as needed */}
+          {articles.slice(3).map((article, index) => (
+            <HorizontalCard key={index} article={article} />
+          ))}
+        </div>
+      </div>
+    );
+  };
+
+  return <NewsSection />;
+};
+
+export default Section;
