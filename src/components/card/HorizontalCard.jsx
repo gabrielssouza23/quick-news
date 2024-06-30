@@ -17,7 +17,8 @@ export function HorizontalCard({article}) {
       >
         <img
           src={article.multimedia && article.multimedia[0] ? article.multimedia[0].url : "default-image-url.jpg"}
-          alt={article.multimedia[6]}
+          // alt={article.multimedia[5]}
+          alt="default-image"
           className="h-full w-full object-cover"
         />
       </CardHeader>

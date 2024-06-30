@@ -12,6 +12,8 @@
     /* flex-wrap: wrap; */
     justify-content: center;
     align-items: center;
-    gap: 5%;
-    padding: 8px 0;
+    gap: 20px;
+    padding: 12px 0;
+    font-weight: 600;
+    font-size: calc(0.6em + 0.5vw);
 }

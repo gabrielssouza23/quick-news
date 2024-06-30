@@ -23,22 +23,21 @@ const Section = () => {
       getArticles();
     }, []);
 
+    
+
     return (
       <div className="container mx-auto p-4">
         <div className="grid grid-cols-1 gap-4">
-          {/* Single Card Row */}
           {articles.slice(0, 1).map((article, index) => (
             <HorizontalCard key={index} article={article} />
           ))}
 
-          {/* Double Card Row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {articles.slice(1, 3).map((article, index) => (
               <HorizontalCard key={index} article={article} />
             ))}
           </div>
 
-          {/* Repeat as needed */}
           {articles.slice(3).map((article, index) => (
             <HorizontalCard key={index} article={article} />
           ))}
