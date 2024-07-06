@@ -2,11 +2,14 @@ import React, { useState, useEffect } from 'react';
 // import GET_ARTICLE from '../../Api/news/getArticleNYT'
 import GET_TOPSTORIES from '../../Api/news/getTopStories';
 import { HorizontalCard } from '../card/HorizontalCard';
+import { select } from '@material-tailwind/react';
 
-const Section = () => {
-  const { url, options } = GET_TOPSTORIES();
+const Section = ({selectedCategory}) => {
 
-  const fetchData = async () => {
+  const [articles, setArticles] = useState([]);
+
+  const fetchData = async (category) => {
+    const { url, options } = GET_TOPSTORIES(category);
     const response = await fetch(url, options);
     const data = await response.json();
     return data;
@@ -17,7 +20,7 @@ const Section = () => {
 
     useEffect(() => {
       const getArticles = async () => {
-        const data = await fetchData();
+        const data = await fetchData(selectedCategory);
         setArticles(data.results);
       };
       getArticles();

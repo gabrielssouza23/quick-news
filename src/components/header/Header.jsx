@@ -2,14 +2,14 @@ import React from 'react'
 import './header.css'
 import Categories from '../categories/Categories'
 
-const Header = () => {
+const Header = ({onCategoryClick}) => {
   return (
     <header>
       <nav>
         <div className="title">
           <h1>Quick Times</h1>
         </div>
-        <Categories />
+        <Categories onCategoryClick={onCategoryClick} />
       </nav>
     </header>
   )

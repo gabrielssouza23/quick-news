@@ -1,28 +1,20 @@
-import React from 'react'
-import './categories.css'
+import React from 'react';
+import './categories.css';
 
-function Categories() {
+const Categories = ({ onCategoryClick }) => {
+  const categories = ["home", "opinion", "world", "national", "politics", "business", "technology", "science", "health", "sports", "arts", "books", "style", "food", "travel"];
+
   return (
     <div className='category'>
-      <ul className='categoryList'>
-        <li>Home</li>
-        <li>Opinion</li>
-        <li>World</li>
-        <li>National</li>
-        <li>Politics</li>
-        <li>Business</li>
-        <li>Technology</li>
-        <li>Science</li>
-        <li>Health</li>
-        <li>Sports</li>
-        <li>Arts</li>
-        <li>Books</li>
-        <li>Style</li>
-        <li>Food</li>
-        <li>Travel</li>
+      <ul className='categoryList capitalize'>
+        {categories.map(category => (
+          <li key={category} onClick={() => onCategoryClick(category)}>
+            {category}
+          </li>
+        ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Categories
+export default Categories;

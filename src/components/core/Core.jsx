@@ -3,14 +3,19 @@ import React from 'react';
 import Layout from './Layout';
 import MainContainer from './MainContainer';
 import Section from '../section/Section';
+import Header from '../header/Header';
+import Footer from '../Footer/Footer';
 
-const Core = () => {
+const Core = ({selectedCategory}) => {
+
   return (
-    <Layout>
+    <div className="page">
+    <Header />
       <MainContainer>
-        <Section />
+        <Section selectedCategory={selectedCategory}/>
       </MainContainer>
-    </Layout>
+    <Footer />
+    </div>
   );
 };
 
